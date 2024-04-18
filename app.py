@@ -78,6 +78,7 @@ def predict():
         prediction = pipeline.predict([features])
         prediction_list = prediction.tolist()
         prediction_text = {"message": prediction_list}
+        print(prediction_text)
         return jsonify(prediction_text)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
